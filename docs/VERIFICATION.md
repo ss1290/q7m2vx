@@ -7,7 +7,8 @@
 - 2 Chromium workflow checks covering desktop and mobile interactions.
 - Reviewed desktop and mobile screenshots: `overview.png`, `mobile.png`.
 - Python formatting check: 7 files already formatted.
-- Docker Compose configuration validation (does not require the engine).
+- Docker Compose configuration validation.
+- Docker image build and container runtime verification; UI, health, analysis, and CSV routes returned HTTP 200.
 - Public repository opened in a fresh browser context without authentication: HTTP 200.
 - Public README fetched without authentication: HTTP 200.
 - Vercel production dashboard, health endpoint, analysis endpoint, and CSV export: HTTP 200.
@@ -16,9 +17,9 @@
 
 ## Remaining external verification
 
-- Docker image build/run: local Docker engine did not start.
 - Unlisted YouTube publication: account upload unavailable.
 - Final submission form: deliberately not submitted without required app/video links.
-- CI activation: saved GitHub token lacks workflow scope. `ci.yml` is the template.
+
+The optional GitHub Actions configuration remains available as `ci.yml`; CI activation is not a deliverable requirement.
 
 The public repository is https://github.com/ss1290/q7m2vx. No hosted app URL or YouTube URL has been invented.

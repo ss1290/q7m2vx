@@ -141,7 +141,7 @@ Invalid dates, reversed windows, out-of-January decisions and malformed cutoffs 
 
 ## Verification
 
-Local verification: **16 backend checks passed, 2 browser checks passed, and the production build passed**. Desktop and mobile screenshots were reviewed. The Vercel production dashboard, API, analysis, and CSV export were also verified publicly. Docker engine startup failed on this machine, so the container build remains the only pending runtime check; the included CI template can check it on GitHub when activated.
+Verification completed: **16 backend checks passed, 2 browser checks passed, and the production build passed**. Desktop and mobile screenshots were reviewed. The Vercel production dashboard, API, analysis, and CSV export were verified publicly. The Docker image also built successfully and its UI, health, analysis, and CSV routes returned HTTP 200 from the running container.
 
 ```sh
 python -m pytest -q

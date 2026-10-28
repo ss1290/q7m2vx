@@ -4,7 +4,7 @@ Day-ahead wind intelligence for a UK energy procurement team. Built with **React
 
 **Public repository:** https://github.com/ss1290/q7m2vx  
 **Hosted app:** Not deployed yet; authenticated Vercel access is required. Deployment configuration is included.  
-**Demo:** See `artifacts/windward-demo.mp4` in the local project when generated. YouTube upload is pending account access. The video uses disclosed synthetic narration.  
+**Demo:** Local narrated MP4: `artifacts/windward-demo.mp4` (6:04). YouTube upload is pending account access. The video uses disclosed synthetic narration.  
 **AI disclosure:** OpenAI Codex assisted with domain research, implementation, styling, tests, documentation, and demo preparation. The data are real Elexon responses, not AI-generated or synthetic.
 
 ![Windward dashboard](docs/overview.png)
@@ -124,7 +124,7 @@ The standard-library fetcher uses four workers, bounded retries, exact-version d
 | `artifacts/`                            | Local screenshots and demo video (excluded from Git)               |
 | `Dockerfile`, `compose.yaml`            | One-service production container                                   |
 | `vercel.json`, `.python-version`        | Static React plus Python function deployment                       |
-| `docs/ci.yml`              | CI template: backend tests, frontend compilation and Docker build               |
+| `docs/ci.yml`                           | CI template: backend tests, frontend compilation and Docker build  |
 | `package-lock.json`, `requirements.txt` | Reproducible dependency inputs                                     |
 
 ## API
@@ -171,6 +171,18 @@ npx vercel --prod
 Authenticate when required. Alternatively import the public repository in Vercel and retain `vercel.json`. No runtime secrets are required. After successful publication, replace the hosted-app status at the top of this README with the real URL. Verify `/`, `/api/health`, an analysis request, and CSV export in an unauthenticated browser session. The Vercel route/build configuration has not been verified in production until this step succeeds.
 
 ## Demo and submission
+
+The completed local draft is `artifacts/windward-demo.mp4`. The source and video are also packaged in `q7m2vx-submission.zip` alongside this project on the Desktop. Video artifacts are excluded from Git; the narration is tracked in `docs/DEMO_SCRIPT.md`.
+
+To regenerate the recording on Windows, start the app on port 8000, then run:
+
+```powershell
+.venv\Scripts\python.exe -m pip install imageio-ffmpeg
+npx playwright install chromium
+node scripts/create_demo.mjs
+```
+
+The recording script uses Windows System.Speech for disclosed synthetic narration. `node scripts/create_demo.mjs --from=4` resumes from the fifth chapter when earlier MP4 segments remain available.
 
 The assignment requires a maximum ten-minute unlisted YouTube video with customer and technical sections, each with an initial overview of at most five minutes. The prepared narration is disclosed as synthetic. The local MP4 is a draft suitable for review and upload, not a claim that a YouTube video exists.
 

@@ -3,7 +3,7 @@
  * Run: node scripts/create_demo.mjs
  */
 import { chromium } from '@playwright/test';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
@@ -69,7 +69,7 @@ function slideContent(kind) {
   const cards = {
     architecture: `<div class="flow">Elexon streams <b>&rarr;</b> Offline snapshot <b>&rarr;</b> FastAPI <b>&rarr;</b> React</div><div class="grid"><section><h3>React + TypeScript</h3><p>Filters, charts, audit table, CSV and methodology.</p></section><section><h3>Python + FastAPI</h3><p>Validated API, pure analysis core and bounded caching.</p></section><section><h3>Reproducible data</h3><p>19,272 forecast versions. 1,488 WIND actuals. Source URLs and SHA-256 hashes.</p></section><section><h3>Two delivery paths</h3><p>Docker: one Python service. Vercel: static assets plus Python ASGI function.</p></section></div>`,
     analysis: `<div class="grid"><section><h3>Decision-time integrity</h3><p>latest publishTime &le; decision cutoff<br>Decision D &rarr; delivery D+1</p></section><section><h3>Hourly alignment</h3><p>Hourly actual MW = mean of two half-hours.<br>Require both. Never fill missing values.</p></section></div><pre>${escapeHtml(readFileSync('backend/analysis.py', 'utf8').split('eligible =')[1]?.slice(0, 1100) ?? '')}</pre>`,
-    tests: `<div class="grid"><section><h3>16 backend checks passed</h3><p>Publication boundaries ? No look-ahead ? Revisions<br>Missing values ? Units ? January boundaries<br>Metric formulas ? API validation ? CSV</p></section><section><h3>2 browser checks passed</h3><p>Desktop filters and navigation<br>CSV download and audit table expansion<br>Mobile navigation and overflow</p></section><section><h3>Production build passed</h3><p>TypeScript compilation<br>React static build with split chart bundle</p></section><section><h3>Readable code</h3><p>Prettier + Ruff formatting<br>Comments for domain logic<br>README and architecture handover</p></section></div>`,
+    tests: `<div class="grid"><section><h3>16 backend checks passed</h3><p>Publication boundaries &middot; No look-ahead &middot; Revisions<br>Missing values &middot; Units &middot; January boundaries<br>Metric formulas &middot; API validation &middot; CSV</p></section><section><h3>2 browser checks passed</h3><p>Desktop filters and navigation<br>CSV download and audit table expansion<br>Mobile navigation and overflow</p></section><section><h3>Production build passed</h3><p>TypeScript compilation<br>React static build with split chart bundle</p></section><section><h3>Readable code</h3><p>Prettier + Ruff formatting<br>Comments for domain logic<br>README and architecture handover</p></section></div>`,
     delivery: `<div class="flow">github.com/ss1290/q7m2vx</div><div class="grid"><section><h3>Ready locally</h3><p>React + Python application<br>Real historical snapshot<br>Tests, Docker configuration and Vercel configuration<br>Documentation and narrated demo draft</p></section><section><h3>External steps still pending</h3><p>Authenticated Vercel deployment<br>Unlisted YouTube upload<br>Public access verification and final form<br>Docker engine build verification</p></section></div><pre>docker compose up --build
 
 # Or build React and serve with Python
@@ -81,10 +81,19 @@ python -m uvicorn backend.main:app --port 8000</pre>`,
 
 const browser = await chromium.launch();
 const clips = [];
+// Resume from a zero-based segment after an interrupted recording.
+const startAt = Number(process.argv.find((arg) => arg.startsWith('--from='))?.split('=')[1] ?? 0);
 let script =
   '# Windward demo narration\n\nComputer-generated narration, disclosed in the recording. Two parts, under ten minutes total.\n\n';
 for (let index = 0; index < segments.length; index++) {
   const segment = segments[index];
+  if (index < startAt) {
+    const existing = resolve(output, `segment-${index}.mp4`);
+    if (!existsSync(existing)) throw new Error(`Missing earlier segment: ${existing}`);
+    clips.push(existing);
+    script += `## ${segment.title}\n\n${segment.narration}\n\n`;
+    continue;
+  }
   const wav = resolve(output, `voice-${index}.wav`);
   const textPath = resolve(output, `voice-${index}.txt`);
   writeFileSync(textPath, segment.narration);
@@ -192,5 +201,5 @@ command(encoder, [
   '+faststart',
   resolve('artifacts/windward-demo.mp4'),
 ]);
-writeFileSync('docs/DEMO_SCRIPT.md', script.replaceAll('\n', '\n'));
+writeFileSync('docs/DEMO_SCRIPT.md', script);
 console.log('Created artifacts/windward-demo.mp4 and docs/DEMO_SCRIPT.md');

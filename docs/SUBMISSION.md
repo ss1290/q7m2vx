@@ -3,7 +3,7 @@
 - Public repository: https://github.com/ss1290/q7m2vx
 - App URL: pending authenticated Vercel deployment.
 - Unlisted YouTube URL: pending upload from a YouTube account.
-- Local draft demo: `artifacts/windward-demo.mp4` when generation completes.
+- Local draft demo: `artifacts/windward-demo.mp4` (6:04, generated and decoded successfully).
 - Submission form from the original document: https://forms.cloud.microsoft/r/Ljmf1aWESK
 
 The form has not been submitted. The brief explicitly requires the video before submission.

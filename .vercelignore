@@ -1,0 +1,15 @@
+.git
+.github
+.venv
+.pytest_cache
+.vercel
+artifacts
+dist
+docs
+node_modules
+test-results
+tests
+__pycache__
+*.zip
+*.mp4
+*.png

@@ -2,9 +2,12 @@
 
 Day-ahead wind intelligence for a UK energy procurement team. Built with **React + TypeScript**, **Python + FastAPI**, and **Docker**.
 
-**Public repository:** https://github.com/ss1290/q7m2vx  
-**Hosted app:** Not deployed yet; authenticated Vercel access is required. Deployment configuration is included.  
-**Demo:** Local narrated MP4: `artifacts/windward-demo.mp4` (6:04). YouTube upload is pending account access. The video uses disclosed synthetic narration.  
+**Public repository:** https://github.com/ss1290/q7m2vx
+
+**Hosted app:** https://q7m2vx-nu.vercel.app
+
+**Demo:** Local narrated MP4: `artifacts/windward-demo.mp4` (4:15). YouTube upload is pending account access. The demo uses a natural neural narration voice.
+
 **AI disclosure:** OpenAI Codex assisted with domain research, implementation, styling, tests, documentation, and demo preparation. The data are real Elexon responses, not AI-generated or synthetic.
 
 ![Windward dashboard](docs/overview.png)
@@ -182,8 +185,8 @@ npx playwright install chromium
 node scripts/create_demo.mjs
 ```
 
-The recording script uses Windows System.Speech for disclosed synthetic narration. `node scripts/create_demo.mjs --from=4` resumes from the fifth chapter when earlier MP4 segments remain available.
+The recording script uses the Microsoft Edge neural voice `en-GB-RyanNeural`. Install the local generation client with `pip install edge-tts`. `node scripts/create_demo.mjs --from=4` resumes from the fifth chapter when earlier MP4 segments remain available.
 
-The assignment requires a maximum ten-minute unlisted YouTube video with customer and technical sections, each with an initial overview of at most five minutes. The prepared narration is disclosed as synthetic. The local MP4 is a draft suitable for review and upload, not a claim that a YouTube video exists.
+The assignment requires a maximum ten-minute unlisted YouTube video with customer and technical sections. The revised 4:15 demo contains a 2:18 customer presentation and a 1:57 technical handover. AI assistance and neural narration are disclosed in this README. The local MP4 is ready for review and upload, but no YouTube URL is claimed until the upload succeeds.
 
 Read `docs/SUBMISSION.md` before submission. Do not submit the form without the required video and public app URL. Account authentication cannot be replaced with invented links.

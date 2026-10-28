@@ -10,13 +10,13 @@
 - Docker Compose configuration validation (does not require the engine).
 - Public repository opened in a fresh browser context without authentication: HTTP 200.
 - Public README fetched without authentication: HTTP 200.
-- Narrated MP4: 6:04 total; customer part 2:51; technical part 3:12.
+- Vercel production dashboard, health endpoint, analysis endpoint, and CSV export: HTTP 200.
+- Narrated MP4: 4:15 total; customer part 2:18; technical part 1:57.
 - Video is H.264 with AAC audio. A complete decode finished without errors.
 
 ## Remaining external verification
 
 - Docker image build/run: local Docker engine did not start.
-- Vercel deployment and public app access: authenticated account access unavailable.
 - Unlisted YouTube publication: account upload unavailable.
 - Final submission form: deliberately not submitted without required app/video links.
 - CI activation: saved GitHub token lacks workflow scope. `ci.yml` is the template.

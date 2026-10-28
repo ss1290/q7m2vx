@@ -6,7 +6,9 @@ Day-ahead wind intelligence for a UK energy procurement team. Built with **React
 
 **Hosted app:** https://q7m2vx-nu.vercel.app
 
-**Demo:** Local narrated MP4: `artifacts/windward-demo.mp4` (4:15). YouTube upload is pending account access. The demo uses a natural neural narration voice.
+**Demo video:** https://youtu.be/oHUIEhUa5RE
+
+The 4:15 demo uses a natural neural narration voice. A local copy is available at `artifacts/windward-demo.mp4`.
 
 **AI disclosure:** OpenAI Codex assisted with domain research, implementation, styling, tests, documentation, and demo preparation. The data are real Elexon responses, not AI-generated or synthetic.
 
@@ -187,6 +189,6 @@ node scripts/create_demo.mjs
 
 The recording script uses the Microsoft Edge neural voice `en-GB-RyanNeural`. Install the local generation client with `pip install edge-tts`. `node scripts/create_demo.mjs --from=4` resumes from the fifth chapter when earlier MP4 segments remain available.
 
-The assignment requires a maximum ten-minute unlisted YouTube video with customer and technical sections. The revised 4:15 demo contains a 2:18 customer presentation and a 1:57 technical handover. AI assistance and neural narration are disclosed in this README. The local MP4 is ready for review and upload, but no YouTube URL is claimed until the upload succeeds.
+The assignment requires a maximum ten-minute unlisted YouTube video with customer and technical sections. The 4:15 demo contains a 2:18 customer presentation and a 1:57 technical handover. AI assistance and neural narration are disclosed in this README. The YouTube link was verified in a fresh unauthenticated browser session.
 
-Read `docs/SUBMISSION.md` before submission. Do not submit the form without the required video and public app URL. Account authentication cannot be replaced with invented links.
+Read `docs/SUBMISSION.md` before submitting the verified links with the applicant details requested by the form.

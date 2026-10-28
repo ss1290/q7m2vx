@@ -14,12 +14,12 @@
 - Vercel production dashboard, health endpoint, analysis endpoint, and CSV export: HTTP 200.
 - Narrated MP4: 4:15 total; customer part 2:18; technical part 1:57.
 - Video is H.264 with AAC audio. A complete decode finished without errors.
+- YouTube video opened in a fresh unauthenticated browser session: HTTP 200, with no unavailable-video message.
 
 ## Remaining external verification
 
-- Unlisted YouTube publication: account upload unavailable.
-- Final submission form: deliberately not submitted without required app/video links.
+- Final submission form: pending the applicant details requested by the form.
 
 The optional GitHub Actions configuration remains available as `ci.yml`; CI activation is not a deliverable requirement.
 
-The public repository is https://github.com/ss1290/q7m2vx. No hosted app URL or YouTube URL has been invented.
+The public repository is https://github.com/ss1290/q7m2vx, the production app is https://q7m2vx-nu.vercel.app, and the video is https://youtu.be/oHUIEhUa5RE.

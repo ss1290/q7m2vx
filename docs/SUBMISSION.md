@@ -2,17 +2,15 @@
 
 - Public repository: https://github.com/ss1290/q7m2vx
 - App URL: https://q7m2vx-nu.vercel.app
-- Unlisted YouTube URL: pending upload from a YouTube account.
+- Unlisted YouTube URL: https://youtu.be/oHUIEhUa5RE
 - Local demo: `artifacts/windward-demo.mp4` (4:15, generated and decoded successfully).
 - Submission form from the original document: https://forms.cloud.microsoft/r/Ljmf1aWESK
 
-The form has not been submitted. The brief explicitly requires the video before submission.
+The repository, production app, and YouTube video links are ready. The form still requires the applicant's personal details before it can be submitted accurately.
 
 ## Remaining external steps
 
-1. Review the final narrated video and upload it to YouTube with **Unlisted** visibility. Put its verified link in the README.
-2. Open the repository, app and video URLs in incognito mode to confirm access.
-3. Submit the real URLs to the form. Never use placeholders as if they were completed deliverables.
+1. Submit the verified repository, app, and video URLs with the requested applicant details.
 
 ## Suggested YouTube metadata
 

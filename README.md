@@ -118,7 +118,7 @@ The standard-library fetcher uses four workers, bounded retries, exact-version d
 | `api/index.py`                          | Vercel ASGI entry point reusing the same app                       |
 | `data/`                                 | Real source records and provenance manifest                        |
 | `scripts/fetch_data.py`                 | Reproducible Elexon downloader                                     |
-| `scripts/create_demo.mjs`               | Browser-driven narrated demo generator, when generated             |
+| `scripts/create_demo.mjs`               | Browser-driven narrated demo generator                             |
 | `tests/test_analysis.py`                | Unit, real-snapshot integration and API checks                     |
 | `tests/browser/`                        | Desktop and mobile workflow checks                                 |
 | `docs/ARCHITECTURE.md`                  | Technical handover and design tradeoffs                            |
@@ -141,7 +141,7 @@ Invalid dates, reversed windows, out-of-January decisions and malformed cutoffs 
 
 ## Verification
 
-Local verification: **16 backend checks passed, 2 browser checks passed, and the production build passed**. Desktop and mobile screenshots were reviewed. Docker engine startup failed on this machine, so the container build is pending; the included CI template can check it on GitHub when activated. Vercel production verification is pending account access.
+Local verification: **16 backend checks passed, 2 browser checks passed, and the production build passed**. Desktop and mobile screenshots were reviewed. The Vercel production dashboard, API, analysis, and CSV export were also verified publicly. Docker engine startup failed on this machine, so the container build remains the only pending runtime check; the included CI template can check it on GitHub when activated.
 
 ```sh
 python -m pytest -q
@@ -175,7 +175,7 @@ Authenticate when required. Alternatively import the public repository in Vercel
 
 ## Demo and submission
 
-The completed local draft is `artifacts/windward-demo.mp4`. The source and video are also packaged in `q7m2vx-submission.zip` alongside this project on the Desktop. Video artifacts are excluded from Git; the narration is tracked in `docs/DEMO_SCRIPT.md`.
+The completed demo is `artifacts/windward-demo.mp4`. The source and video are also packaged in `q7m2vx-submission.zip` alongside this project on the Desktop. Video artifacts are excluded from Git; the narration is tracked in `docs/DEMO_SCRIPT.md`.
 
 To regenerate the recording on Windows, start the app on port 8000, then run:
 

@@ -6,11 +6,11 @@
 - Local demo: `artifacts/windward-demo.mp4` (4:15, generated and decoded successfully).
 - Submission form from the original document: https://forms.cloud.microsoft/r/Ljmf1aWESK
 
-The repository, production app, and YouTube video links are ready. The form still requires the applicant's personal details before it can be submitted accurately.
+The repository, production app, YouTube video, resume, and applicant details were submitted on 28 October 2026. Microsoft Forms displayed the confirmation message, `Your response was submitted.`
 
-## Remaining external steps
+## Delivery status
 
-1. Submit the verified repository, app, and video URLs with the requested applicant details.
+Submission is complete. Keep the public links available for reviewer access.
 
 ## Suggested YouTube metadata
 

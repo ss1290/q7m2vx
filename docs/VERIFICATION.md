@@ -16,9 +16,10 @@
 - Video is H.264 with AAC audio. A complete decode finished without errors.
 - YouTube video opened in a fresh unauthenticated browser session: HTTP 200, with no unavailable-video message.
 
-## Remaining external verification
+## Submission verification
 
-- Final submission form: pending the applicant details requested by the form.
+- Final submission form: all eight fields were populated and checked before submission.
+- Microsoft Forms confirmed: `Your response was submitted.`
 
 The optional GitHub Actions configuration remains available as `ci.yml`; CI activation is not a deliverable requirement.
 

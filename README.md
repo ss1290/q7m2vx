@@ -191,4 +191,4 @@ The recording script uses the Microsoft Edge neural voice `en-GB-RyanNeural`. In
 
 The assignment requires a maximum ten-minute unlisted YouTube video with customer and technical sections. The 4:15 demo contains a 2:18 customer presentation and a 1:57 technical handover. AI assistance and neural narration are disclosed in this README. The YouTube link was verified in a fresh unauthenticated browser session.
 
-Read `docs/SUBMISSION.md` before submitting the verified links with the applicant details requested by the form.
+The verified repository, app, video, resume, and applicant details were submitted through the assignment form on 28 October 2026.
